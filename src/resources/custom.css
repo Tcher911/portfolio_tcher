@@ -1,0 +1,36 @@
+/* Custom Font Configuration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Font Variables */
+:root {
+  --font-heading: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-label: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Font Optimization */
+* {
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Thai Text Optimization */
+.th, .thai {
+  font-family: var(--font-heading);
+  font-feature-settings: 'liga' 1, 'calt' 1, 'locl' 1;
+}
+
+/* English Text Optimization */
+.en, .english {
+  font-family: var(--font-body);
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Code Text */
+code, pre {
+  font-family: var(--font-code);
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}

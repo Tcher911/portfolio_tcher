@@ -99,10 +99,13 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      
+      {/* Featured project with priority loading */}
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
 
+      {/* Additional projects without priority */}
       <Projects range={[2]} />
       <Mailchimp />
     </Column>

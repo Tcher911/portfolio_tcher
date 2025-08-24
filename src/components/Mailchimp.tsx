@@ -20,6 +20,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
       border="neutral-alpha-weak"
       {...flex}
     >
+      {/* Simplified background effects for better performance */}
       <Background
         top="0"
         position="absolute"
@@ -40,21 +41,22 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           colorStart: mailchimp.effects.gradient.colorStart,
           colorEnd: mailchimp.effects.gradient.colorEnd,
         }}
+        // Reduced effects for better performance
         dots={{
-          display: mailchimp.effects.dots.display,
+          display: false, // Disable dots for better performance
           opacity: mailchimp.effects.dots.opacity as opacity,
           size: mailchimp.effects.dots.size as SpacingToken,
           color: mailchimp.effects.dots.color,
         }}
         grid={{
-          display: mailchimp.effects.grid.display,
+          display: false, // Disable grid for better performance
           opacity: mailchimp.effects.grid.opacity as opacity,
           color: mailchimp.effects.grid.color,
           width: mailchimp.effects.grid.width,
           height: mailchimp.effects.grid.height,
         }}
         lines={{
-          display: mailchimp.effects.lines.display,
+          display: false, // Disable lines for better performance
           opacity: mailchimp.effects.lines.opacity as opacity,
           color: mailchimp.effects.lines.color,
           size: mailchimp.effects.lines.size as SpacingToken,

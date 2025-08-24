@@ -45,7 +45,16 @@ export default async function RootLayout({
         fonts.code.variable,
       )}
     >
-      <head />
+      <head>
+        {/* Preload critical resources for better performance */}
+        <link rel="preload" href="/fonts/LINESeedSansTH_W_Th.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/LINESeedSansTH_W_Rg.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/LINESeedSansTH_W_Bd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/LINESeedSansTH_W_He.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/LINESeedSansTH_W_XBd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      </head>
       <Providers>
         <ThemeInitializer />
         <Column
@@ -76,21 +85,22 @@ export default async function RootLayout({
                 colorStart: effects.gradient.colorStart,
                 colorEnd: effects.gradient.colorEnd,
               }}
+              // Reduced effects for better performance
               dots={{
-                display: effects.dots.display,
+                display: false, // Disable dots for better performance
                 opacity: effects.dots.opacity as opacity,
                 size: effects.dots.size as SpacingToken,
                 color: effects.dots.color,
               }}
               grid={{
-                display: effects.grid.display,
+                display: false, // Disable grid for better performance
                 opacity: effects.grid.opacity as opacity,
                 color: effects.grid.color,
                 width: effects.grid.width,
                 height: effects.grid.height,
               }}
               lines={{
-                display: effects.lines.display,
+                display: false, // Disable lines for better performance
                 opacity: effects.lines.opacity as opacity,
                 size: effects.lines.size as SpacingToken,
                 thickness: effects.lines.thickness,

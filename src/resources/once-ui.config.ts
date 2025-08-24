@@ -66,6 +66,8 @@ const heading = localFont({
   ],
   variable: '--font-heading',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial', 'sans-serif'],
 });
 
 const body = localFont({
@@ -83,6 +85,8 @@ const body = localFont({
   ],
   variable: '--font-body',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial', 'sans-serif'],
 });
 
 const label = localFont({
@@ -100,6 +104,8 @@ const label = localFont({
   ],
   variable: '--font-label',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial', 'sans-serif'],
 });
 
 const code = localFont({
@@ -112,6 +118,8 @@ const code = localFont({
   ],
   variable: '--font-code',
   display: 'swap',
+  preload: true,
+  fallback: ['monospace', 'Courier New', 'monospace'],
 });
 
 const fonts: FontsConfig = {
@@ -125,8 +133,8 @@ const fonts: FontsConfig = {
 const style: StyleConfig = {
   theme: "system", // dark | light | system
   neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  brand: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative

@@ -27,9 +27,9 @@ export function Projects({ range, exclude }: ProjectsProps) {
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
       {displayedProjects.map((post, index) => (
         <ProjectCard
-          priority={index < 2}
+          priority={index < 2} // Only first 2 projects get priority loading
           key={post.slug}
-          href={`work/${post.slug}`}
+          href={`/work/${post.slug}`}
           images={post.metadata.images}
           title={post.metadata.title}
           description={post.metadata.summary}

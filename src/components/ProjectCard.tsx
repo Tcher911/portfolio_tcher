@@ -23,6 +23,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  priority = false,
   images = [],
   title,
   content,
@@ -34,9 +35,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Column fillWidth gap="m">
       <Carousel
         sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
+        priority={priority}
+        items={images.map((image, index) => ({
           slide: image,
           alt: title,
+          priority: priority && index === 0, // Only prioritize the first image if this card has priority
         }))}
       />
       <Flex

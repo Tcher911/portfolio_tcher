@@ -4,7 +4,7 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 
-import { Footer, Header, Providers, RouteGuard } from "@/components";
+import { Footer, Header, Providers, RouteGuard, LoadingProvider } from "@/components";
 import { ThemeInitializer } from "@/components/ThemeInitializer";
 import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import {
@@ -33,30 +33,29 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Flex
-      suppressHydrationWarning
-      as="html"
-      lang="th"
-      fillWidth
-      className={classNames(
-        fonts.heading.variable,
-        fonts.body.variable,
-        fonts.label.variable,
-        fonts.code.variable,
-      )}
-    >
-      <head>
-        {/* Preload critical resources for better performance */}
-        <link rel="preload" href="/fonts/LINESeedSansTH_W_Th.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/LINESeedSansTH_W_Rg.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/LINESeedSansTH_W_Bd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/LINESeedSansTH_W_He.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/LINESeedSansTH_W_XBd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      </head>
-      <Providers>
-        <ThemeInitializer />
+    <Providers>
+      <Flex
+        suppressHydrationWarning
+        as="html"
+        lang="th"
+        fillWidth
+        className={classNames(
+          fonts.heading.variable,
+          fonts.body.variable,
+          fonts.label.variable,
+          fonts.code.variable,
+        )}
+      >
+        <head>
+          {/* Preload critical resources for better performance */}
+          <link rel="preload" href="/fonts/LINESeedSansTH_W_Th.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/LINESeedSansTH_W_Rg.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/LINESeedSansTH_W_Bd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/LINESeedSansTH_W_He.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/LINESeedSansTH_W_XBd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+          <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        </head>
         <Column
           as="body"
           background="page"
@@ -66,59 +65,62 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <RevealFx fill position="absolute">
-            <Background
-              mask={{
-                x: effects.mask.x,
-                y: effects.mask.y,
-                radius: effects.mask.radius,
-                cursor: effects.mask.cursor,
-              }}
-              gradient={{
-                display: effects.gradient.display,
-                opacity: effects.gradient.opacity as opacity,
-                x: effects.gradient.x,
-                y: effects.gradient.y,
-                width: effects.gradient.width,
-                height: effects.gradient.height,
-                tilt: effects.gradient.tilt,
-                colorStart: effects.gradient.colorStart,
-                colorEnd: effects.gradient.colorEnd,
-              }}
-              // Reduced effects for better performance
-              dots={{
-                display: false, // Disable dots for better performance
-                opacity: effects.dots.opacity as opacity,
-                size: effects.dots.size as SpacingToken,
-                color: effects.dots.color,
-              }}
-              grid={{
-                display: false, // Disable grid for better performance
-                opacity: effects.grid.opacity as opacity,
-                color: effects.grid.color,
-                width: effects.grid.width,
-                height: effects.grid.height,
-              }}
-              lines={{
-                display: false, // Disable lines for better performance
-                opacity: effects.lines.opacity as opacity,
-                size: effects.lines.size as SpacingToken,
-                thickness: effects.lines.thickness,
-                angle: effects.lines.angle,
-                color: effects.lines.color,
-              }}
-            />
-          </RevealFx>
-          <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
-          <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
-            <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
+          <LoadingProvider initialLoading={true}>
+            <ThemeInitializer />
+            <RevealFx fill position="absolute">
+              <Background
+                mask={{
+                  x: effects.mask.x,
+                  y: effects.mask.y,
+                  radius: effects.mask.radius,
+                  cursor: effects.mask.cursor,
+                }}
+                gradient={{
+                  display: effects.gradient.display,
+                  opacity: effects.gradient.opacity as opacity,
+                  x: effects.gradient.x,
+                  y: effects.gradient.y,
+                  width: effects.gradient.width,
+                  height: effects.gradient.height,
+                  tilt: effects.gradient.tilt,
+                  colorStart: effects.gradient.colorStart,
+                  colorEnd: effects.gradient.colorEnd,
+                }}
+                // Reduced effects for better performance
+                dots={{
+                  display: false, // Disable grid for better performance
+                  opacity: effects.dots.opacity as opacity,
+                  size: effects.dots.size as SpacingToken,
+                  color: effects.dots.color,
+                }}
+                grid={{
+                  display: false, // Disable grid for better performance
+                  opacity: effects.grid.opacity as opacity,
+                  color: effects.grid.color,
+                  width: effects.grid.width,
+                  height: effects.grid.height,
+                }}
+                lines={{
+                  display: false, // Disable lines for better performance
+                  opacity: effects.lines.opacity as opacity,
+                  size: effects.lines.size as SpacingToken,
+                  thickness: effects.lines.thickness,
+                  angle: effects.lines.angle,
+                  color: effects.lines.color,
+                }}
+              />
+            </RevealFx>
+            <Flex fillWidth minHeight="16" s={{ hide: true }} />
+            <Header />
+            <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
+              <Flex horizontal="center" fillWidth minHeight="0">
+                <RouteGuard>{children}</RouteGuard>
+              </Flex>
             </Flex>
-          </Flex>
-          <Footer />
+            <Footer />
+          </LoadingProvider>
         </Column>
-      </Providers>
-    </Flex>
+      </Flex>
+    </Providers>
   );
 }

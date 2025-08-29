@@ -65,6 +65,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
         <LoadingScreen 
           preloadUrls={[
             "https://my.spline.design/nexbotrobotcharacterconcept-LyJDWQ3ApMViItkPQcE5HTXd/"
+            //"https://my.spline.design/100followers-6mgWi6zsY3TasHASMnBMKphn/"
           ]} 
         />
       )}

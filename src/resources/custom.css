@@ -137,3 +137,86 @@ label, small {
 [class*="Text"], [class*="Heading"], [class*="Label"] {
   line-height: var(--font-line-height-body) !important;
 }
+
+/* LoadingScreen Responsive Design */
+.spline-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .spline-iframe {
+    border-radius: 0;
+    max-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Adjust splash screen for mobile */
+  #splash-screen {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Tablet responsive adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .spline-iframe {
+    border-radius: 0;
+    max-height: 100vh;
+    margin: 0;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .spline-iframe {
+    max-height: 100vh;
+    margin: 0;
+  }
+}
+
+/* Ensure no spacing in all screen sizes */
+#splash-screen {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.spline-iframe {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fallback content responsive */
+.fallback-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.fallback-content p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .fallback-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .fallback-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fallback-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  
+  .fallback-content p {
+    font-size: 0.9rem;
+  }
+}

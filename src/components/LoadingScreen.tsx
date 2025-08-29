@@ -177,8 +177,7 @@ export default function SplashScreen(props: SplashScreenProps) {
                         height: "100%",
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center",
-                        marginBottom: "2rem"
+                        alignItems: "center"
                     }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: splineLoaded ? 1 : 0.3 }}
@@ -189,9 +188,9 @@ export default function SplashScreen(props: SplashScreenProps) {
                         style={{
                             width: "100%",
                             height: "100%",
-                            border: "none",
-                            borderRadius: "12px"
+                            border: "none"
                         }}
+                        className="spline-iframe"
                         title="Loading Animation"
                         loading="lazy"
                         onError={handleSplineError}
@@ -209,15 +208,14 @@ export default function SplashScreen(props: SplashScreenProps) {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        marginBottom: "2rem",
                         background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
                     }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div style={{ textAlign: "center", color: "white" }}>
-                        <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Welcome</h2>
+                    <div style={{ textAlign: "center", color: "white" }} className="fallback-content">
+                        <h2 style={{ fontSize: "2rem" }}>Welcome</h2>
                         <p style={{ fontSize: "1.2rem" }}>Loading your portfolio...</p>
                     </div>
                 </motion.div>

@@ -1,12 +1,12 @@
 /* Custom Font Configuration */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Font Variables */
+/* Font Variables - These will be populated by Next.js font variables */
 :root {
-  --font-heading: var(--font-heading), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: var(--font-body), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-label: var(--font-label), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-code: var(--font-code), 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-heading: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-label: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Line Height Variables */
   --font-line-height-heading: 1.4;
@@ -39,6 +39,23 @@
   --accent-800: #155e75;
   --accent-900: #164e63;
   --accent-950: #083344;
+}
+
+/* Next.js Font Variables - These will override the above when fonts are loaded */
+.font-heading, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-body, p, div, span, body {
+  font-family: var(--font-body), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-label, label, small {
+  font-family: var(--font-label), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-code, code, pre {
+  font-family: var(--font-code), 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 /* Font Optimization with Line Height - Using !important to override Once UI */

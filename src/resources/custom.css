@@ -3,10 +3,10 @@
 
 /* Font Variables */
 :root {
-  --font-heading: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-label: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-code: 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-heading: var(--font-heading), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: var(--font-body), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-label: var(--font-label), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: var(--font-code), 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Line Height Variables */
   --font-line-height-heading: 1.4;
@@ -87,6 +87,33 @@ label, small {
 /* Force line height on Once UI components */
 [class*="once-ui"] {
   line-height: var(--font-line-height-body) !important;
+}
+
+/* Mobile Font Optimization */
+@media (max-width: 768px) {
+  * {
+    font-display: swap !important;
+    font-feature-settings: 'liga' 1, 'calt' 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+  
+  /* Ensure fonts load on mobile */
+  html, body {
+    font-family: var(--font-body) !important;
+    font-display: swap !important;
+  }
+  
+  /* Optimize font loading for mobile */
+  .font-heading, h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    font-display: swap !important;
+  }
+  
+  .font-body, p, div, span {
+    font-family: var(--font-body) !important;
+    font-display: swap !important;
+  }
 }
 
 /* Specific Once UI text components */

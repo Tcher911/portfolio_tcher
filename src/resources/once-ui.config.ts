@@ -67,7 +67,8 @@ const heading = localFont({
   variable: '--font-heading',
   display: 'swap',
   preload: true,
-  fallback: ['system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const body = localFont({
@@ -86,7 +87,8 @@ const body = localFont({
   variable: '--font-body',
   display: 'swap',
   preload: true,
-  fallback: ['system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const label = localFont({
@@ -105,7 +107,8 @@ const label = localFont({
   variable: '--font-label',
   display: 'swap',
   preload: true,
-  fallback: ['system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const code = localFont({
@@ -119,7 +122,8 @@ const code = localFont({
   variable: '--font-code',
   display: 'swap',
   preload: true,
-  fallback: ['monospace', 'Courier New', 'monospace'],
+  fallback: ['LINE Seed Sans TH', 'monospace', 'Courier New', 'monospace'],
+  adjustFontFallback: true,
 });
 
 const fonts: FontsConfig = {

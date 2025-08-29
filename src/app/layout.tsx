@@ -47,12 +47,7 @@ export default async function RootLayout({
         )}
       >
         <head>
-          {/* Preload critical resources for better performance */}
-          <link rel="preload" href="/fonts/LINESeedSansTH_W_Th.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-          <link rel="preload" href="/fonts/LINESeedSansTH_W_Rg.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-          <link rel="preload" href="/fonts/LINESeedSansTH_W_Bd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-          <link rel="preload" href="/fonts/LINESeedSansTH_W_He.woff" as="font" type="font/woff" crossOrigin="anonymous" />
-          <link rel="preload" href="/fonts/LINESeedSansTH_W_XBd.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+          {/* Font preloading is handled by next/font/local automatically */}
           <link rel="dns-prefetch" href="//fonts.googleapis.com" />
           <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         </head>

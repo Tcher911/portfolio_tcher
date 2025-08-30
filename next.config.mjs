@@ -22,9 +22,8 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Performance optimizations
+  // Performance optimizations - simplified to avoid CSS preload issues
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@once-ui-system/core'],
   },
   // Compression for better performance

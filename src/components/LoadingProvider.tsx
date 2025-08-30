@@ -29,21 +29,48 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
   children, 
   initialLoading = true 
 }) => {
-  const [isLoading, setIsLoading] = useState(initialLoading);
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasShownInitialLoading, setHasShownInitialLoading] = useState(false);
 
   useEffect(() => {
-    // Simulate initial app loading
+    // Always show loading screen when component mounts
     if (initialLoading) {
+      console.log('LoadingProvider: Showing loading screen for 10 seconds');
+      setIsLoading(true);
+      
       const timer = setTimeout(() => {
+        console.log('LoadingProvider: Loading complete, hiding loading screen');
         setIsLoading(false);
-        setIsInitialized(true);
-      }, 10000); // Set to 10 seconds as requested
+        setHasShownInitialLoading(true);
+      }, 10000); // 10 seconds
 
       return () => clearTimeout(timer);
     }
-    setIsInitialized(true);
+    
+    // Skip loading screen if initialLoading is false
+    setIsLoading(false);
+    setHasShownInitialLoading(true);
   }, [initialLoading]);
+
+  // Add this to window for testing (remove in production)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Add reset function to window for testing
+      (window as any).resetLoadingState = () => {
+        console.log('LoadingProvider: Reset loading state for testing');
+        setIsLoading(true);
+        setHasShownInitialLoading(false);
+        
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+          setHasShownInitialLoading(true);
+        }, 10000);
+        
+        return () => clearTimeout(timer);
+      };
+      console.log('LoadingProvider: Added resetLoadingState to window for testing');
+    }
+  }, []);
 
   const startLoading = () => setIsLoading(true);
   const completeLoading = () => setIsLoading(false);
@@ -61,15 +88,10 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
         completeLoading,
       }}
     >
-      {(!isInitialized || isLoading) && (
-        <LoadingScreen 
-          preloadUrls={[
-            "https://my.spline.design/nexbotrobotcharacterconcept-LyJDWQ3ApMViItkPQcE5HTXd/"
-            //"https://my.spline.design/100followers-6mgWi6zsY3TasHASMnBMKphn/"
-          ]} 
-        />
+      {isLoading && (
+        <LoadingScreen />
       )}
-      {isInitialized && children}
+      {hasShownInitialLoading && children}
     </LoadingContext.Provider>
   );
 };

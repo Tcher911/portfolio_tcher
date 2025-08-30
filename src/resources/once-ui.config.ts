@@ -67,7 +67,7 @@ const heading = localFont({
   variable: '--font-heading',
   display: 'swap',
   preload: true,
-  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const body = localFont({
@@ -86,7 +86,7 @@ const body = localFont({
   variable: '--font-body',
   display: 'swap',
   preload: true,
-  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const label = localFont({
@@ -105,7 +105,7 @@ const label = localFont({
   variable: '--font-label',
   display: 'swap',
   preload: true,
-  fallback: ['LINE Seed Sans TH', 'system-ui', 'arial', 'sans-serif'],
+  fallback: ['LINE Seed Sans TH', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const code = localFont({
@@ -119,7 +119,7 @@ const code = localFont({
   variable: '--font-code',
   display: 'swap',
   preload: true,
-  fallback: ['LINE Seed Sans TH', 'monospace', 'Courier New', 'monospace'],
+  fallback: ['LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
 });
 
 const fonts: FontsConfig = {

@@ -11,3 +11,4 @@ export { CustomMDX } from "@/components/mdx";
 export { default as LoadingScreen } from "@/components/LoadingScreen";
 export { LoadingProvider, useLoading } from "@/components/LoadingProvider";
 export { LoadingExample } from "@/components/LoadingExample";
+export { FontOptimizer } from "@/components/FontOptimizer";

@@ -16,6 +16,7 @@ import {
   type SpacingToken,
   type opacity,
 } from "@once-ui-system/core";
+import { FontOptimizer } from "@/components/FontOptimizer";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -50,6 +51,10 @@ export default async function RootLayout({
           {/* Font preloading is handled by next/font/local automatically */}
           <link rel="dns-prefetch" href="//fonts.googleapis.com" />
           <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+          
+          {/* Mobile optimization meta tags */}
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+          <meta name="format-detection" content="telephone=no" />
         </head>
         <Column
           as="body"
@@ -61,6 +66,7 @@ export default async function RootLayout({
           horizontal="center"
         >
           <LoadingProvider initialLoading={true}>
+            <FontOptimizer />
             <ThemeInitializer />
             <RevealFx fill position="absolute">
               <Background

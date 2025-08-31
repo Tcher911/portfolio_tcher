@@ -1,0 +1,263 @@
+/* Custom Font Configuration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Font Variables - These will be populated by Next.js font variables */
+:root {
+  --font-heading: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-label: 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Line Height Variables */
+  --font-line-height-heading: 1.4;
+  --font-line-height-body: 1.6;
+  --font-line-height-label: 1.6;
+  --font-line-height-code: 1.6;
+
+  /* Custom Brand Colors - Based on #471396 */
+  --brand-50: #f8f6ff;
+  --brand-100: #f0ecff;
+  --brand-200: #e1d8ff;
+  --brand-300: #c9b8ff;
+  --brand-400: #a88cff;
+  --brand-500: #8b5cf6;  /* Standard violet-500 */
+  --brand-600: #7c3aed;
+  --brand-700: #6d28d9;
+  --brand-800: #5b21b6;
+  --brand-900: #471396;  /* Your specified color */
+  --brand-950: #3c0f7a;
+
+  /* Custom Accent Colors - Cyan theme */
+  --accent-50: #ecfeff;
+  --accent-100: #cffafe;
+  --accent-200: #a5f3fc;
+  --accent-300: #67e8f9;
+  --accent-400: #22d3ee;
+  --accent-500: #06b6d4;  /* Standard cyan-500 */
+  --accent-600: #0891b2;
+  --accent-700: #0e7490;
+  --accent-800: #155e75;
+  --accent-900: #164e63;
+  --accent-950: #083344;
+}
+
+/* Font Loading Optimization */
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_W_Rg.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_W_Bd.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_W_Th.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_W_He.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_W_XBd.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Next.js Font Variables - These will override the above when fonts are loaded */
+.font-heading, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-body, p, div, span, body {
+  font-family: var(--font-body), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-label, label, small {
+  font-family: var(--font-label), 'LINE Seed Sans TH', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-code, code, pre {
+  font-family: var(--font-code), 'LINE Seed Sans TH', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Font Optimization with Line Height - Using !important to override Once UI */
+* {
+  font-feature-settings: 'liga' 1, 'calt' 1 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  line-height: var(--font-line-height-body) !important;
+}
+
+/* Thai Text Optimization */
+.th, .thai {
+  font-family: var(--font-heading) !important;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'locl' 1 !important;
+  line-height: var(--font-line-height-heading) !important;
+}
+
+/* English Text Optimization */
+.en, .english {
+  font-family: var(--font-body) !important;
+  font-feature-settings: 'liga' 1, 'calt' 1 !important;
+  line-height: var(--font-line-height-body) !important;
+}
+
+/* Code Text */
+code, pre {
+  font-family: var(--font-code) !important;
+  font-feature-settings: 'liga' 0, 'calt' 0 !important;
+  line-height: var(--font-line-height-code) !important;
+}
+
+/* Specific Line Height for Different Text Elements - Using !important */
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--font-line-height-heading) !important;
+}
+
+p, div, span {
+  line-height: var(--font-line-height-body) !important;
+}
+
+label, small {
+  line-height: var(--font-line-height-label) !important;
+}
+
+/* Force line height on Once UI components */
+[class*="once-ui"] {
+  line-height: var(--font-line-height-body) !important;
+}
+
+/* Mobile Font Optimization */
+@media (max-width: 768px) {
+  * {
+    font-display: swap !important;
+    font-feature-settings: 'liga' 1, 'calt' 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+  
+  /* Ensure fonts load on mobile */
+  html, body {
+    font-family: var(--font-body) !important;
+    font-display: swap !important;
+  }
+  
+  /* Optimize font loading for mobile */
+  .font-heading, h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    font-display: swap !important;
+  }
+  
+  .font-body, p, div, span {
+    font-family: var(--font-body) !important;
+    font-display: swap !important;
+  }
+}
+
+/* Specific Once UI text components */
+[class*="Text"], [class*="Heading"], [class*="Label"] {
+  line-height: var(--font-line-height-body) !important;
+}
+
+/* LoadingScreen Responsive Design */
+.spline-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .spline-iframe {
+    border-radius: 0;
+    max-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Adjust splash screen for mobile */
+  #splash-screen {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Tablet responsive adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .spline-iframe {
+    border-radius: 0;
+    max-height: 100vh;
+    margin: 0;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .spline-iframe {
+    max-height: 100vh;
+    margin: 0;
+  }
+}
+
+/* Ensure no spacing in all screen sizes */
+#splash-screen {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.spline-iframe {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fallback content responsive */
+.fallback-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.fallback-content p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .fallback-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .fallback-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fallback-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  
+  .fallback-content p {
+    font-size: 0.9rem;
+  }
+}

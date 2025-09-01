@@ -45,7 +45,7 @@ export default function SplashScreen(props: SplashScreenProps) {
 
     useEffect(() => {
         // Check if we should show content (10 seconds passed OR user interacted)
-        if (timeElapsed >= 10000 || userInteracted) {
+        if (timeElapsed >= 12000 || userInteracted) {
             // Add a small delay for smooth transition
             setTimeout(() => {
                 setIsContentLoaded(true)
@@ -96,7 +96,7 @@ export default function SplashScreen(props: SplashScreenProps) {
                     transition={{ duration: 0.8 }}
                 >
                     <iframe
-                        src="https://my.spline.design/nexbotrobotcharacterconcept-LyJDWQ3ApMViItkPQcE5HTXd/"
+                        src="https://my.spline.design/chatgptkeyboard-nvcB2ZDRpBopuA9m1EoPfyYR/"
                         style={{
                             width: "100%",
                             height: "100%",

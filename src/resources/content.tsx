@@ -128,8 +128,8 @@ const about: About = {
     title: "Education",
     institutions: [
       {
-        name: "Sripatum University",
-        description: <>Master of Specialisation in UX/UI / Interaction Design</>,
+        name: "Kasetsart University",
+        description: <>Bachelor of Software Engineering</>,
       },
       {
         name: "Sripatum University",
@@ -143,15 +143,15 @@ const about: About = {
     skills: [
       {
         title: "Figma",
-        description: <>สามารถใช้ออกแบบ UX /UI และทำ Prototype ได้อย่างเชี่ยวชาญ</>,
+        description: <>สามารถใช้ออกแบบ UX /UI และทำ Design System, Prototype ได้อย่างเชี่ยวชาญ</>,
       },
       {
         title: "Framer",
-        description: <>สามารถสร้าง Website ที่มี Animation, Motion, Effect และมี Performance สูง</>,
+        description: <>สามารถสร้าง Website ที่มี Animation, Motion, Effect และมี Performance ที่ดี</>,
       },
       {
         title: "Webflow",
-        description: <>สามารถสร้าง Website ได้อย่างรวดเร็ว รองรับSEO ที่ดี</>,
+        description: <>สามารถสร้าง Website ได้อย่างรวดเร็ว รองรับ SEO ที่ดี</>,
       },
       {
         title: "Adobe Creative",

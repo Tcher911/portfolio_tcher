@@ -127,10 +127,10 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Education",
     institutions: [
-      {
-        name: "Kasetsart University",
-        description: <>Bachelor of Software Engineering</>,
-      },
+//      {
+//        name: "Kasetsart University",
+//       description: <>Bachelor of Software Engineering</>,
+//      },
       {
         name: "Sripatum University",
         description: <>Bachelor of Digital media Interactive and Game design</>,
@@ -162,8 +162,8 @@ const about: About = {
         description: <>สามารถประยุกต์ใช้งาน AI เพื่อสร้างต้นแบบในงานออกแบบได้ เพื่อลดเวลาในการทำงาน</>,
       },
       {
-        title: "Next.js & Cursor",
-        description: <>สร้าง Web-App ด้วย Next.js + Shadcn/ui + Supabase</>,
+        title: "Next.js",
+        description: <>สร้าง Web-App ด้วย Next.js ด้วย UI Library ต่างๆ เช่น Shadcn/ui, Tailwind CSS, MUI, Material UI, Chakra UI และเชื่อมต่อ API</>,
       },
     ],
   },

@@ -33,7 +33,7 @@ export default function SplashScreen(props: SplashScreenProps) {
         const timer = setInterval(() => {
             setTimeElapsed(prev => {
                 const newTime = prev + 100
-                if (newTime >= 10000) { // 10 seconds
+                if (newTime >= 5000) { // 10 seconds
                     clearInterval(timer)
                 }
                 return newTime
@@ -45,7 +45,7 @@ export default function SplashScreen(props: SplashScreenProps) {
 
     useEffect(() => {
         // Check if we should show content (10 seconds passed OR user interacted)
-        if (timeElapsed >= 12000 || userInteracted) {
+        if (timeElapsed >= 5000 || userInteracted) {
             // Add a small delay for smooth transition
             setTimeout(() => {
                 setIsContentLoaded(true)
@@ -96,7 +96,7 @@ export default function SplashScreen(props: SplashScreenProps) {
                     transition={{ duration: 0.8 }}
                 >
                     <iframe
-                        src="https://my.spline.design/chatgptkeyboard-nvcB2ZDRpBopuA9m1EoPfyYR/"
+                        src="https://my.spline.design/gitnesssplinetest-d22c968e675d14d47d7d7cc87f40140c/"
                         style={{
                             width: "100%",
                             height: "100%",

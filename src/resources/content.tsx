@@ -64,10 +64,10 @@ const home: Home = {
     display: true,
     title: (
       <>
-        ผลงานล่าสุด: <strong className="ml-4">TCHER Portfolio</strong>
+        ผลงานล่าสุด: <strong className="ml-4">E-Commerce Website</strong>
       </>
     ),
-    href: "/work/222parts-website",
+    href: "/work/cpac-website",
   },
   subline: <>มากกว่าการออกแบบคือความสำเร็จของทุกโปรเจกต์</>,
 };
